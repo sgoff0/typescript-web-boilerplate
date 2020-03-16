@@ -7,16 +7,19 @@ import * as Colors from 'colors';
 const monthNames = Object.freeze(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
+function toTwoDigitString(value: number): string {
+    let text = value + "";
+    if (value < 10) {
+        text = '0' + value;
+    }
+    return text;
+}
+
 function getLogTimeStamp() {
     const date = new Date();
     const month = monthNames[date.getMonth()];
-    const seconds = date.getSeconds();
-    let secondsText = seconds + "";
-    if (seconds < 10) {
-        secondsText = '0' + seconds;
-    }
     return date.getDate() + ' ' + month + ' ' + date.getFullYear() + ' ' + date.getHours() +
-        ':' + date.getMinutes() + ':' + secondsText + '.' + date.getMilliseconds();
+        ':' + toTwoDigitString(date.getMinutes()) + ':' + toTwoDigitString(date.getSeconds()) + '.' + date.getMilliseconds();
 }
 
 const logLevel = process.env.LOG_LEVEL || 'info';
