@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=10.14.2"
+  },
   "scripts": {
     "start:dev": "nodemon",
     "build": "tsc -p tsconfig.release.json",
