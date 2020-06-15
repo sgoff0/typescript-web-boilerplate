@@ -1,7 +1,5 @@
 import './utils/env';
 import logger from './utils/logger';
-import './utils/env';
-
 import { createServer } from 'http';
 import { app } from './app';
 

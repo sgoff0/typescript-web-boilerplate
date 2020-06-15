@@ -1,0 +1,11 @@
+---
+applications:
+  - name: typescript-web-boilerplate
+    memory: 384M
+    disk_quota: 512M
+    instances: 1
+    command: npm run start
+    buildpacks:
+      - nodejs_buildpack
+    stack: cflinuxfs3
+    path: build/typescript-web-boilerplate.zip

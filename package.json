@@ -15,7 +15,11 @@
     "eslint:check": "eslint . --ext .ts --max-warnings 15",
     "eslint:fix": "eslint . --ext .ts --fix",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "cfbuild": "./bin/build.sh",
+    "cfpush": "cf push typescript-web-boilerplate -p build/typescript-web-boilerplate.zip -s cflinuxfs3",
+    "cflog": "cf logs typescript-web-boilerplate --recent",
+    "cftail": "cf logs typescript-web-boilerplate"
   },
   "author": "",
   "license": "ISC",
