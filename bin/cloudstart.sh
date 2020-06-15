@@ -12,4 +12,4 @@ fi
 
 echo "Executing node with flags: ${NODE_FLAGS}"
 echo "Arguments passed to cloudstart: ${@}"
-node $NODE_FLAGS "$@"
+ts-node $NODE_FLAGS "$@"
